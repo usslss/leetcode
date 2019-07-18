@@ -1,6 +1,7 @@
 <?php
 //7. Reverse Integer
 //https://leetcode.com/problems/reverse-integer/
+
 class Solution
 {
     /**
@@ -13,17 +14,10 @@ class Solution
         if ($x > 2147483647 || $x < -2147483647) {
             return 0;
         }
-        $i = 0;
-        while ($x != 0) {
-            $array[$i] = $x % 10;
-            $x = ($x - $array[$i]) / 10;
-            $i++;
-        }
         $result = 0;
-        $place = 1;
-        for ($j = ($i - 1); $j >= 0; $j--) {
-            $result = $result + $array[$j] * $place;
-            $place = $place * 10;
+        while ($x != 0) {
+            $result = $result * 10 + ($x % 10);
+            $x = ($x - ($x % 10)) / 10;
         }
         if ($result > 2147483647 || $result < -2147483647) {
             return 0;
