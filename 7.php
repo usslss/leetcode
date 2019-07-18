@@ -10,7 +10,7 @@ class Solution
      */
     function reverse($x)
     {
-        //我寻思着这个32位判断我做的也太糙了  推荐用len(x)>32判断(Emm这个好像是python的函数)
+        //我寻思着这个32位判断我做的也太糙了  不知道php里面有没有类似len(x)的函数
         if ($x > 2147483647 || $x < -2147483647) {
             return 0;
         }
